@@ -1,0 +1,420 @@
+:root {
+	--line-height: 1.8;
+	--font-size: 16px;
+
+	--text-font: "Rubik", sans-serif;
+	--heading-font: "neo-sans", sans-serif;
+
+	--background-color: #fff;
+	--text-color: #1d1d1b;
+	--uni-b: #1d1d1b;
+	--uni-c: #00aea9;
+	--uni-g: #707070;
+	--uni-l: #fcfcfc;
+	--uni-y: #ffdd00;
+	--verde: #32ba2b;
+	--vermelho: #e74c3c;
+	--accent: #f3f3f3;
+
+	--azul: #0063a4;
+
+	--button-size: 46px;
+	--navbar-height: 80px;
+	--column-width: 1368px;
+	--text-width: 900px;
+
+	--default-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+	--hover-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+
+	--materiais-button-index: 20;
+	--materiais-wrapper-index: 16;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	margin: 0;
+	line-height: var(--line-height);
+	font-size: var(--font-size);
+	background: var(--azul);
+	color: var(--text-color);
+	font-family: "Rubik", sans-serif;
+	letter-spacing: 0.4px;
+	scroll-behavior: smooth;
+}
+
+body.popup-open {
+	overflow: hidden;
+}
+
+nav {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: var(--navbar-height);
+	background: #00558dd5;
+	color: var(--uni-l);
+	padding: 16px;
+	z-index: 10;
+	font-size: 0.88em;
+	backdrop-filter: blur(2px) brightness(80%);
+}
+
+nav ul {
+	list-style: none;
+	display: flex;
+	padding: 0;
+	/* margin: auto; */
+	max-width: var(--column-width);
+}
+
+nav ul a {
+	color: inherit;
+	text-decoration: none;
+	/* text-transform: uppercase; */
+	margin: 4px 0;
+	display: block;
+}
+
+nav li {
+	margin: 0 8px;
+	position: relative;
+}
+
+nav .wrapper {
+	max-width: var(--column-width);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 100%;
+	margin: auto;
+}
+
+nav img {
+	height: 48px;
+}
+
+nav ul li:hover ul,
+nav ul li a:focus~ul {
+	animation: menu-down 200ms ease forwards;
+	display: block;
+}
+
+@keyframes menu-down {
+	from {
+		display: block;
+		opacity: 0;
+		transform: translateX(-20px);
+	}
+
+	to {
+		display: block;
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+.hidden-on-desktop {
+	display: none;
+}
+
+main {
+	/* padding-top: var(--navbar-height); */
+	width: 100%;
+	/* max-width: var(--column-width); */
+	margin: auto;
+	text-align: center;
+	min-height: calc(100vh - 112px);
+}
+
+.ologuinhomeu {
+	place-self: center;
+	grid-area: logo;
+}
+
+.anima-construcao {
+	max-height: 50vh;
+	width: auto;
+}
+
+.container {
+	position: relative;
+}
+
+.anchor {
+	position: absolute;
+	top: calc(var(--navbar-height) * -1 - 20px);
+}
+
+h2 {
+	font-size: 36px;
+	margin: 40px auto;
+	/* text-transform: uppercase; */
+	font-family: var(--heading-font);
+	color: var(--azul);
+	font-weight: normal;
+	line-height: 1.3;
+}
+
+section p {
+	max-width: var(--text-width);
+	text-align: left;
+	margin: 1em auto;
+	font-size: 18px;
+}
+
+.lamano {
+	height: 80px;
+}
+
+.prog-card,
+.participar-card {
+	padding: 40px;
+	border-radius: 30px;
+	background: #f2f2f2;
+	max-width: var(--text-width);
+	box-shadow: 0 10px 20px #00000029;
+	margin: 80px auto 40px auto;
+	position: relative;
+	z-index: 2;
+	color: var(--uni-b);
+}
+
+.prog-card h2,
+section.blue .participar-card h2 {
+	margin: 0 auto 40px;
+	color: var(--azul);
+}
+
+.grid-2-3 {
+	display: grid;
+	grid-template-columns: 2fr 3fr;
+	gap: 16px;
+	font-size: 18px;
+}
+
+.grid-2-3 span {
+	place-self: start right;
+}
+
+.grid-2-3 p {
+	place-self: start left;
+	text-align: left;
+	width: 100%;
+	font-weight: bold;
+	margin: 0;
+}
+
+section.white {
+	background: var(--uni-l);
+	color: var(--uni-b);
+	padding: 16px;
+}
+
+.hero,
+section.blue {
+	background: var(--azul);
+	color: var(--uni-l);
+	padding: 16px;
+}
+
+section.blue h2 {
+	color: var(--uni-l);
+}
+
+section.second {
+	margin-top: -200px;
+	padding-top: 160px;
+	padding-bottom: 40px;
+}
+
+.hero {
+	padding: 80px;
+	min-height: 100vh;
+}
+
+.palestrantes-wrapper {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 16px;
+	max-width: var(--column-width);
+	margin: auto;
+}
+
+.palestra p {
+	text-align: center;
+	font-size: 24px;
+}
+
+.palestra img {
+	background: red;
+	width: 200px;
+	height: 200px;
+	object-fit: cover;
+	border-radius: 50%;
+	box-shadow: 0 10px 30px #00000029;
+}
+
+.realizacao {
+	margin-top: 80px;
+}
+
+.realizacao p {
+	text-align: center;
+	font-size: 14px;
+}
+
+.realiza-logos {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 16px;
+	width: fit-content;
+	margin: auto;
+}
+
+.realiza-logos img {
+	height: 140px;
+	width: 140px;
+	object-fit: contain;
+	margin: 24px;
+}
+
+footer {
+	font-family: var(--heading-font);
+	background: var(--accent);
+	padding: 40px 16px;
+	letter-spacing: initial;
+	color: #808080;
+}
+
+footer .wrapper {
+	display: flex;
+	justify-content: space-between;
+	max-width: var(--column-width);
+	margin: auto;
+}
+
+footer .mobile-links {
+	border-bottom: 2px solid #00000020;
+	margin-bottom: 24px;
+	display: none;
+}
+
+footer .mobile-links ul {
+	display: flex;
+	flex-direction: column;
+	width: fit-content;
+}
+
+footer .mobile-links li {
+	margin-bottom: 8px;
+}
+
+footer .mobile-links a {
+	text-decoration: none;
+	color: var(--text-color);
+}
+
+@media only screen and (max-width: 1000px) {
+	.palestrantes-wrapper {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media only screen and (max-width: 940px) {
+
+	/* navbar no topo */
+	nav {
+		height: auto;
+		background: #00558de8;
+	}
+
+	nav .wrapper {
+		display: grid;
+		grid-template-columns: auto 1fr auto;
+		grid-template-rows: auto 1fr;
+		grid-template-areas:
+			"button content logo"
+			"menu menu menu";
+	}
+
+	nav .a-portal {
+		grid-area: logo;
+	}
+
+	nav .hidden-on-desktop {
+		display: flex;
+		grid-area: button;
+		height: var(--button-size);
+		width: var(--button-size);
+		border-radius: 50%;
+		align-items: center;
+		justify-content: center;
+		background: transparent;
+		border: 0;
+		color: var(--uni-l);
+		cursor: pointer;
+	}
+
+	nav ul {
+		max-height: 0;
+		overflow: hidden;
+		margin: 0;
+		grid-area: menu;
+		flex-direction: column;
+	}
+
+	nav.active ul {
+		animation: abrete 400ms ease forwards;
+	}
+
+	nav.active ul li {
+		margin: 8px 0;
+		width: fit-content;
+	}
+}
+
+@media only screen and (max-width: 600px) {
+	.palestrantes-wrapper {
+		grid-template-columns: 1fr;
+	}
+
+	.realiza-logos {
+		grid-template-columns: 1fr;
+	}
+
+	.realiza-logos img {
+		margin: 0;
+	}
+
+	footer .wrapper {
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+	}
+
+	footer .redes {
+		margin-top: 24px;
+	}
+
+	footer .mobile-links {
+		display: block;
+	}
+}
+
+@keyframes abrete {
+	from {
+		padding: 16px 8px 0;
+		max-height: 0vh;
+	}
+
+	to {
+		padding: 16px 8px 0;
+		max-height: 100vh;
+	}
+}
